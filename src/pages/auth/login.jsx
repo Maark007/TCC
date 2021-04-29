@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import api from "../../services/api";
+import Swal from "sweetalert2";
 
 import { Main, MiddleDivisor, ImageDivisor, LoginDivisor } from "./styles";
+import { isAuthenticated } from "../../services/auth";
+import { Redirect } from "react-router-dom";
 
 import InputAdornment from "@material-ui/core/InputAdornment";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
@@ -13,7 +17,30 @@ import Register from "../../components/register/register";
 import CartoonImage from "../../assets/cartoon.png";
 
 export default function Login() {
+  const [password, setPassword] = useState({ value: "", error: false });
+  const [email, setEmail] = useState({ value: "", error: false });
   const [showLoginForms, setShowLoginForms] = useState("login");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    if (!email.value) return setEmail({ error: true });
+    if (!password.value) return setPassword({ error: true });
+
+    try {
+      const login = await api.post("/login", {
+        email: email.value,
+        password: password.value,
+      });
+      localStorage.setItem("id", login.data.id);
+      return window.location.reload();
+    } catch (err) {
+      const { error } = err.response.data;
+      return Swal.fire("Opps", error, "error");
+    }
+  };
+
+  if (isAuthenticated()) return <Redirect to="/home" />;
 
   return (
     <Main>
@@ -56,9 +83,10 @@ export default function Login() {
                   <FormControl fullWidth>
                     <InputLabel>Email</InputLabel>
                     <Input
+                      onChange={(e) => setEmail({ value: e.target.value })}
+                      error={email.error}
                       type="email"
                       name="email"
-                      required
                       startAdornment={
                         <InputAdornment position="start">
                           <MailOutlineIcon />
@@ -69,9 +97,10 @@ export default function Login() {
                   <FormControl style={{ marginTop: 20 }} fullWidth>
                     <InputLabel>Senha</InputLabel>
                     <Input
+                      onChange={(e) => setPassword({ value: e.target.value })}
+                      error={password.error}
                       type="password"
                       name="password"
-                      required
                       startAdornment={
                         <InputAdornment position="start">
                           <LockIcon />
@@ -80,7 +109,7 @@ export default function Login() {
                     />
                   </FormControl>
                   <div className="login-button">
-                    <button>Login</button>
+                    <button onClick={handleLogin}>Login</button>
                   </div>
                   <div className="create-account-span">
                     <span>Não possui uma conta ?</span>
@@ -90,7 +119,7 @@ export default function Login() {
                   </div>
                 </form>
               ) : (
-                <Register />
+                <Register setLoginForm={setShowLoginForms} />
               )}
             </div>
           </div>

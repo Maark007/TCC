@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
 import MUIDataTable from "mui-datatables";
+import styled from "styled-components";
+import api from "../../services/api";
 
 const MuiTable = styled(MUIDataTable)`
   td {
@@ -18,21 +19,28 @@ const MuiTable = styled(MUIDataTable)`
 `;
 
 export default function Table() {
+  const [students, setStudents] = useState(undefined);
+
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const usuary = await api.get("/students");
+        setStudents(usuary.data);
+      } catch {}
+    }
+    loadData();
+  }, []);
+
   const columns = [
     "Aluno",
     "Série",
-    "Nota das atividades",
+    "Atividades",
     "Trabalhos",
     "Prova",
     "Nota final",
   ];
 
-  const data = [
-    ["Joe James", "3 ano", "5", "4", "1", "1"],
-    ["John Walsh", "2 ano", "6", "3", "1", "1"],
-    ["Bob Herm", "3 ano", "4", "2", "1", "1"],
-    ["James Houston", "1 ano", "10", "2", "1", "1"],
-  ];
+  const data = students?.map((data) => [data.name, data.series]);
 
   const options = {
     filter: true,

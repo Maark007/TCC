@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import clsx from "clsx";
 
 import { Body, ImageContent, Content } from "./sidebarStyles";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
 import { makeStyles } from "@material-ui/core/styles";
+import { useUser } from "../../container/context";
 import { useHistory } from "react-router-dom";
 
 import AssessmentIcon from "@material-ui/icons/Assessment";
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Sidebar({ openSideBar, children }) {
-  const [whoIs, setWhoIs] = useState("teacher");
+  const user = useUser();
   const classes = useStyles();
   const history = useHistory();
   const isMobile = useWindowWidth() <= 800;
@@ -54,7 +55,7 @@ export default function Sidebar({ openSideBar, children }) {
       >
         <ImageContent>
           <div className="user-name">
-            <span>Olá, Marcos Aurélio.</span>
+            <span>Olá, {user.name}</span>
           </div>
         </ImageContent>
         <Button
@@ -66,7 +67,7 @@ export default function Sidebar({ openSideBar, children }) {
           <HomeIcon />
           <span className="btn-span">Home</span>
         </Button>
-        {whoIs === "teacher" && (
+        {user.type === "Professor" ? (
           <Button
             onClick={() => history.push("/notes")}
             className="btn-model"
@@ -74,7 +75,17 @@ export default function Sidebar({ openSideBar, children }) {
             color="primary"
           >
             <AssessmentIcon />
-            <span className="btn-span">Envias notas</span>
+            <span className="btn-span">Enviar notas</span>
+          </Button>
+        ) : (
+          <Button
+            onClick={() => history.push("/bulletin")}
+            className="btn-model"
+            variant="contained"
+            color="primary"
+          >
+            <AssessmentIcon />
+            <span className="btn-span">Visualizar boletim</span>
           </Button>
         )}
       </Drawer>

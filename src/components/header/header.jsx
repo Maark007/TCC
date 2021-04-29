@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Swal from "sweetalert2";
 
 import { useWindowWidth } from "../../hooks/useWindowWidth";
-import { useHistory } from "react-router-dom";
+import { logout } from "../../services/auth";
 import { Body } from "./headerStyle";
 
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
@@ -13,7 +13,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import AppBar from "@material-ui/core/AppBar";
 
 export default function Header({ setOpenSidebar }) {
-  const history = useHistory();
   const isMobile = useWindowWidth() <= 800;
 
   useEffect(() => {
@@ -28,7 +27,8 @@ export default function Header({ setOpenSidebar }) {
       confirmButtonText: "OK",
     }).then(async (result) => {
       if (result.value) {
-        return history.push("/");
+        logout();
+        return window.location.reload();
       }
     });
   };
