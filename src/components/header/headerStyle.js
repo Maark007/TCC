@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Body = styled.div`
-  z-index: 100;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
   .MuiAppBar-colorPrimary {
     background: linear-gradient(90deg, #0c2646 0, #204065 60%, #2a5788);
   }

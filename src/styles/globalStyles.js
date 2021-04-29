@@ -21,8 +21,4 @@ export default createGlobalStyle`
   a {
    text-decoration: none;
   }
-
-  html {
-    overflow: hidden;
-  }
 `;

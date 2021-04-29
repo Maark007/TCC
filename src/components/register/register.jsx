@@ -61,8 +61,8 @@ export default function Register(props) {
 
   return (
     <Body>
-      <div style={{ display: "flex" }}>
-        <FormControl fullWidth style={{ marginRight: 5 }}>
+      <div className="name-last_name-box">
+        <FormControl fullWidth>
           <InputLabel>Nome</InputLabel>
           <Input
             name="user"
@@ -71,7 +71,7 @@ export default function Register(props) {
             error={name.error}
           />
         </FormControl>
-        <FormControl fullWidth style={{ marginLeft: 5 }}>
+        <FormControl fullWidth>
           <InputLabel>Sobrenome</InputLabel>
           <Input
             name="user"

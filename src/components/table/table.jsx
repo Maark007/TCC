@@ -46,6 +46,7 @@ export default function Table() {
     filter: true,
     responsive: "vertical",
     selectableRows: false,
+    maxHeight: 900
   };
 
   return (

@@ -4,9 +4,12 @@ import Mountains from "../../assets/mountains.jpg";
 export const Body = styled.div`
   display: flex;
   width: 100%;
+  margin-top: 64px;
   .MuiDrawer-paper {
     width: 240px;
-    top: auto;
+    position: fixed;
+    margin-top: 64px;
+    height: 100%;
     z-index: 0;
     border: none;
     box-shadow: rgb(0 0 0 / 30%) 1px 0px 20px;
@@ -51,8 +54,6 @@ export const ImageContent = styled.div`
 export const Content = styled.div`
   width: 100%;
   height: auto;
-  overflow-y: auto;
-  max-height: calc(100vh - 64px);
   ${({ isMobile, isOpen }) =>
     isMobile &&
     isOpen &&

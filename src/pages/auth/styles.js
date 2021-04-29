@@ -5,7 +5,8 @@ export const Main = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   transition: all 500ms cubic-bezier(0.685, 0.0473, 0.346, 1) 0ms;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -58,16 +59,15 @@ export const MiddleDivisor = styled.div`
 export const ImageDivisor = styled.div`
   width: 50%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px 0px 0 10px;
   background: linear-gradient(90deg, #0c2646 0, #204065 60%, #2a5788);
   transition: all 500ms cubic-bezier(0.685, 0.0473, 0.346, 1) 0ms;
-
+  min-height: 530px;
   @media screen and (max-width: 830px) {
-    height: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background: #fff;
+    display: none;
     img {
       display: none;
     }
@@ -76,6 +76,7 @@ export const ImageDivisor = styled.div`
 
 export const LoginDivisor = styled.div`
   width: 50%;
+  min-height: 530px;
   height: 100%;
   transition: all 500ms cubic-bezier(0.685, 0.0473, 0.346, 1) 0ms;
   .formsEffect {
@@ -113,6 +114,7 @@ export const LoginDivisor = styled.div`
       align-items: center;
       justify-content: center;
       width: 100%;
+      min-height: auto;
       padding: 5px !important;
     }
     h4 {

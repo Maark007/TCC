@@ -4,6 +4,9 @@ import MUIDataTable from "mui-datatables";
 
 const MuiTable = styled(MUIDataTable)`
   margin: 10px;
+  html {
+    overflow: hidden;
+  }
   td {
     text-align: center;
   }
@@ -87,7 +90,7 @@ export default function Table() {
         data={NullData}
         columns={columns}
         options={options}
-      />
+      /> 
     </>
   );
 }
