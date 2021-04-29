@@ -67,14 +67,16 @@ export default function Slider(params) {
 
         <label htmlFor="s1" id="slide1">
           <div className="video">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/HdXs5b3M6pE"
-              config
-              controls
-              title="video"
-            />
+            {label === 1 && (
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/HdXs5b3M6pE"
+                config
+                controls
+                title="video"
+              />
+            )}
           </div>
           <div className="info">
             <div className="info-title">
@@ -97,14 +99,16 @@ export default function Slider(params) {
 
         <label htmlFor="s2" id="slide2">
           <div className="video">
-            <iframe
-              title="video"
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/wlTa_yTElGM"
-              config
-              controls
-            />
+            {label === 2 && (
+              <iframe
+                title="video"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/wlTa_yTElGM"
+                config
+                controls
+              />
+            )}
           </div>
           <div className="info">
             <div className="info-title">
@@ -124,14 +128,16 @@ export default function Slider(params) {
 
         <label htmlFor="s3" id="slide3">
           <div className="video">
-            <iframe
-              title="video"
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/6EcnJoYd5oI"
-              config
-              controls
-            />
+            {label === 3 && (
+              <iframe
+                title="video"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/6EcnJoYd5oI"
+                config
+                controls
+              />
+            )}
           </div>
           <div className="info">
             <div className="info-title">
@@ -151,14 +157,16 @@ export default function Slider(params) {
 
         <label htmlFor="s4" id="slide4">
           <div className="video">
-            <iframe
-              title="video"
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/XDBwYrWFZUQ"
-              config
-              controls
-            />
+            {label === 4 && (
+              <iframe
+                title="video"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/XDBwYrWFZUQ"
+                config
+                controls
+              />
+            )}
           </div>
           <div className="info">
             <div className="info-title">
@@ -175,17 +183,18 @@ export default function Slider(params) {
             </div>
           </div>
         </label>
-
         <label htmlFor="s5" id="slide5">
           <div className="video">
-            <iframe
-              title="video"
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/jL2M3WWhRE4"
-              config
-              controls
-            />
+            {label === 5 && (
+              <iframe
+                title="video"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/jL2M3WWhRE4"
+                config
+                controls
+              />
+            )}
           </div>
           <div className="info">
             <div className="info-title">

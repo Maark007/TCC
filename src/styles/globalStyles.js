@@ -24,5 +24,6 @@ export default createGlobalStyle`
 
   iframe {
     border: none;
+    background-color: #000;
   }
 `;
