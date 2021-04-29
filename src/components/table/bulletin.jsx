@@ -86,7 +86,6 @@ export default function Table() {
         columns={columns}
         options={options}
       />
-
       <MuiTable
         title="4º Bimestre"
         data={NullData}
