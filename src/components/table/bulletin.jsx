@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import MUIDataTable from "mui-datatables";
 
-import { useUser } from "../../container/context";
-
 const MuiTable = styled(MUIDataTable)`
   margin: 10px;
   td {
@@ -63,8 +61,6 @@ export default function Table() {
     responsive: "vertical",
     selectableRows: false,
   };
-
-  const user = useUser();
 
   return (
     <>
