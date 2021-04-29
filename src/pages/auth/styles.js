@@ -8,7 +8,7 @@ export const Main = styled.div`
   min-height: 100vh;
   height: auto;
   transition: all 500ms cubic-bezier(0.685, 0.0473, 0.346, 1) 0ms;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
 `;
 

@@ -15,10 +15,14 @@ export default createGlobalStyle`
   }
 
   .swal2-title, .swal2-content {
-   font-family: 'Roboto', sans-serif;
+   font-family: 'Poppins', sans-serif;
   }
 
   a {
    text-decoration: none;
+  }
+
+  iframe {
+    border: none;
   }
 `;

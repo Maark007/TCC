@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import ReactPlayer from "react-player";
-
 import { Body } from "./styles";
 
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
@@ -69,12 +67,13 @@ export default function Slider(params) {
 
         <label htmlFor="s1" id="slide1">
           <div className="video">
-            <ReactPlayer
+            <iframe
               width="100%"
               height="100%"
-              url="https://www.youtube.com/watch?v=HdXs5b3M6pE"
+              src="https://www.youtube.com/embed/HdXs5b3M6pE"
               config
               controls
+              title="video"
             />
           </div>
           <div className="info">
@@ -98,10 +97,11 @@ export default function Slider(params) {
 
         <label htmlFor="s2" id="slide2">
           <div className="video">
-            <ReactPlayer
+            <iframe
+              title="video"
               width="100%"
               height="100%"
-              url="https://www.youtube.com/watch?v=wlTa_yTElGM"
+              src="https://www.youtube.com/embed/wlTa_yTElGM"
               config
               controls
             />
@@ -124,10 +124,11 @@ export default function Slider(params) {
 
         <label htmlFor="s3" id="slide3">
           <div className="video">
-            <ReactPlayer
+            <iframe
+              title="video"
               width="100%"
               height="100%"
-              url="https://www.youtube.com/watch?v=6EcnJoYd5oI"
+              src="https://www.youtube.com/embed/6EcnJoYd5oI"
               config
               controls
             />
@@ -150,10 +151,11 @@ export default function Slider(params) {
 
         <label htmlFor="s4" id="slide4">
           <div className="video">
-            <ReactPlayer
+            <iframe
+              title="video"
               width="100%"
               height="100%"
-              url="https://www.youtube.com/watch?v=XDBwYrWFZUQ"
+              src="https://www.youtube.com/embed/XDBwYrWFZUQ"
               config
               controls
             />
@@ -176,10 +178,11 @@ export default function Slider(params) {
 
         <label htmlFor="s5" id="slide5">
           <div className="video">
-            <ReactPlayer
+            <iframe
+              title="video"
               width="100%"
               height="100%"
-              url="https://www.youtube.com/watch?v=jL2M3WWhRE4"
+              src="https://www.youtube.com/embed/jL2M3WWhRE4"
               config
               controls
             />

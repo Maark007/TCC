@@ -222,7 +222,7 @@ export const Body = styled.div`
     }
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1090px) {
     #slider label {
       margin: auto;
       width: 80%;

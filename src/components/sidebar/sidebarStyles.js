@@ -42,7 +42,7 @@ export const ImageContent = styled.div`
     justify-content: flex-start;
     align-items: center;
     span {
-      font-family: "Roboto", sans-serif;
+      font-family: "Poppins", sans-serif;
       font-weight: 400;
       padding-left: 25px;
       font-size: 14.9px;

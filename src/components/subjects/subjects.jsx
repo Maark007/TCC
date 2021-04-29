@@ -5,7 +5,6 @@ import { Body, Model } from "./subjectsStyles";
 import { Link } from "react-router-dom";
 
 export default function Subjects({ user }) {
-  console.log(user.type);
   return (
     <Body>
       <Model>

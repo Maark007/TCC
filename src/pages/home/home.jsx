@@ -7,7 +7,6 @@ import Subject from "../../components/subjects/subjects";
 
 export default function Home() {
   const user = useUser();
-
   return (
     <Body>
       <div className="home-title">
