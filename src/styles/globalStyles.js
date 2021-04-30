@@ -26,4 +26,12 @@ export default createGlobalStyle`
     border: none;
     background-color: #000;
   }
+
+  .MuiDialogContentText-root {
+    margin-bottom: 0 !important;
+  }
+
+  .MuiDialogTitle-root {
+    padding: 16px 24px 0 24px !important;
+  }
 `;

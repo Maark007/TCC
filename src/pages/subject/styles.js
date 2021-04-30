@@ -9,6 +9,19 @@ export const Body = styled.div`
   .mar {
     margin: 40px 0 5px 0;
   }
+  .content-box-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media (max-width: 500px) {
+    .content-box-title {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 `;
 
 export const PdfBox = styled.div`
@@ -41,7 +54,7 @@ export const PdfBox = styled.div`
   @media (max-width: 500px) {
     justify-content: center;
     align-items: center;
-    .pdf-container{
+    .pdf-container {
       width: 100%;
     }
     .pdf-informations {
