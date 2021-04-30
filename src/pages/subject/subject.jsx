@@ -36,25 +36,23 @@ export default function Subject() {
     return Swal.fire("Sucesso", text, "success");
   }
 
-  console.log(user.type);
-
   return (
     <Body>
       <div className="content-box">
-        <h3>Aulas para assistir</h3>
-        {user.type === "Professor" && (
-          <div className="content-box-title">
+        <div className="content-box-title">
+          <h3>Aulas para assistir</h3>
+          {user.type === "Professor" && (
             <Button variant="outlined" color="primary" onClick={openDialog}>
               Adicionar video
             </Button>
-          </div>
-        )}
+          )}
+        </div>
         <Slider />
       </div>
       <div className="content-box mar">
-        <h3>Área PDF</h3>
-        {user.type === "Professor" && (
-          <div className="content-box-title">
+        <div className="content-box-title">
+          <h3>Área PDF</h3>
+          {user.type === "Professor" && (
             <Button
               variant="outlined"
               color="primary"
@@ -62,8 +60,8 @@ export default function Subject() {
             >
               Adicionar PDF
             </Button>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       <PdfBox>
         <div className="pdf-container">

@@ -43,7 +43,7 @@ export default function Register(props) {
         name: name.value,
         sex: sex.value,
         type: type.value,
-        matery: matery.value
+        matery: matery.value,
       });
       return Swal.fire({
         title: "Sucesso!",
@@ -61,26 +61,24 @@ export default function Register(props) {
 
   return (
     <Body>
-      <div className="name-last_name-box">
-        <FormControl fullWidth>
-          <InputLabel>Nome</InputLabel>
-          <Input
-            name="user"
-            required
-            onChange={(e) => setName({ value: e.target.value })}
-            error={name.error}
-          />
-        </FormControl>
-        <FormControl fullWidth>
-          <InputLabel>Sobrenome</InputLabel>
-          <Input
-            name="user"
-            required
-            onChange={(e) => setLastName({ value: e.target.value })}
-            error={lastName.error}
-          />
-        </FormControl>
-      </div>
+      <FormControl fullWidth>
+        <InputLabel>Nome</InputLabel>
+        <Input
+          name="user"
+          required
+          onChange={(e) => setName({ value: e.target.value })}
+          error={name.error}
+        />
+      </FormControl>
+      <FormControl fullWidth>
+        <InputLabel>Sobrenome</InputLabel>
+        <Input
+          name="user"
+          required
+          onChange={(e) => setLastName({ value: e.target.value })}
+          error={lastName.error}
+        />
+      </FormControl>
       <FormControl fullWidth>
         <InputLabel>Email</InputLabel>
         <Input

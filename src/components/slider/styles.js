@@ -226,7 +226,6 @@ export const Body = styled.div`
     #slider label {
       margin: auto;
       width: 80%;
-      height: 200px;
       border-radius: 4px;
       position: absolute;
       left: 0;
